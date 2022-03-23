@@ -21,12 +21,12 @@ precedence = (
 
 def p_program(p):
 	'''program : block'''
-	print "program"
+	print ("program")
 	#p[0] = program(p[1],"program")
 
 def p_block(p):
 	'''block : constDecl varDecl procDecl statement'''
-	print "block"
+	print ("block")
 
 def p_constDecl(p):
 	'''constDecl : CONST constAssignmentList SEMMICOLOM'''

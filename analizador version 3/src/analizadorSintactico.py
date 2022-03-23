@@ -225,7 +225,7 @@ def p_empty(p):
 	pass
 
 def p_error(p):
-	print "Error de sintaxis ", p
+	print ("Error de sintaxis ", p)
 	#print "Error en la linea "+str(p.lineno)
 
 def buscarFicheros(directorio):
@@ -238,7 +238,7 @@ def buscarFicheros(directorio):
 		ficheros.append(files)
 
 	for file in files:
-		print str(cont)+". "+file
+		print (str(cont)+". "+file)
 		cont = cont+1
 
 	while respuesta == False:
@@ -248,7 +248,7 @@ def buscarFicheros(directorio):
 				respuesta = True
 				break
 
-	print "Has escogido \"%s\"" %files[int(numArchivo)-1]
+	print ("Has escogido \"%s\"" %files[int(numArchivo)-1])
 
 	return files[int(numArchivo)-1]
 
@@ -256,9 +256,11 @@ def traducir(result):
 	graphFile = open('graphviztrhee.vz','w')
 	graphFile.write(result.traducir())
 	graphFile.close()
-	print "El programa traducido se guardo en \"graphviztrhee.vz\""
+	print ("El programa traducido se guardo en \"graphviztrhee.vz\"")
 
-directorio = '/Users/sebas/Documents/Compiladores/pl0/analizador version 2/test/'
+# directorio = '/Users/sebas/Documents/Compiladores/pl0/analizador version 2/test/'
+# directorio = '/Users/sistemasp/Desktop/Alan/Proyecto USB\Practica 1 tl2\Compilador_PL0\analizador version 3'
+directorio = '/Users/sistemasp/Desktop/test'
 archivo = buscarFicheros(directorio)
 test = directorio+archivo
 fp = codecs.open(test,"r","utf-8")

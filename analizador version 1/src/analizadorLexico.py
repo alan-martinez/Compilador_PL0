@@ -77,7 +77,7 @@ def t_NUMBER(t):
 	return t
 
 def t_error(t):
-	print "caracter ilegal '%s'" % t.value[0]
+	print ("caracter ilegal '%s'" % t.value[0])
 	t.lexer.skip(1)
 
 def buscarFicheros(directorio):
@@ -90,21 +90,22 @@ def buscarFicheros(directorio):
 		ficheros.append(files)
 
 	for file in files:
-		print str(cont)+". "+file
+		print (str(cont)+". "+file)
 		cont = cont+1
 
 	while respuesta == False:
-		numArchivo = raw_input('\nNumero del test: ')
+		numArchivo = (raw_input('\nNumero del test: '))
 		for file in files:
 			if file == files[int(numArchivo)-1]:
 				respuesta = True
 				break
 
-	print "Has escogido \"%s\" \n" %files[int(numArchivo)-1]
+	print ("Has escogido \"%s\" \n" %files[int(numArchivo)-1])
 
 	return files[int(numArchivo)-1]
 
-directorio = '/Users/sebas/Documents/Compiladores/pl0/analizador version 1/test/'
+# directorio = 'C:\Users\sistemasp\Desktop\Alan\Proyecto USB\Practica 1 tl2\Compilador_PL0\analizador version 1\test'
+directorio = '/Users/sistemasp/Desktop/Alan/Proyecto USB/Practica 1 tl2/Compilador_PL0/analizador version 1/test'
 archivo = buscarFicheros(directorio)
 test = directorio+archivo
 fp = codecs.open(test,"r","utf-8")
@@ -118,7 +119,7 @@ analizador.input(cadena)
 while True:
 	tok = analizador.token()
 	if not tok : break
-	print tok
+	print (tok)
 
 
 

@@ -78,7 +78,7 @@ def t_NUMBER(t):
 	return t
 
 def t_error(t):
-	print "caracter ilegal '%s'" % t.value[0]
+	print ("caracter ilegal '%s'" % t.value[0])
 	t.lexer.skip(1)
 
 # def buscarFicheros(directorio):
